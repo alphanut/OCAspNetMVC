@@ -69,7 +69,6 @@ C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\bin\fr\System.Web.Webpages.Ra
 C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\bin\fr\System.Web.Helpers.resources.dll
 C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\bin\fr\System.Web.Mvc.resources.dll
 C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\obj\Debug\HelloWorld.csprojAssemblyReference.cache
-C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\obj\Debug\HelloWorld.csproj.CoreCompileInputs.cache
 C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\obj\Debug\HelloWorld.csproj.CopyComplete
 C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\obj\Debug\HelloWorld.dll
 C:\Users\Famille\source\git\OCAspNetMVC\HelloWorld\obj\Debug\HelloWorld.pdb
