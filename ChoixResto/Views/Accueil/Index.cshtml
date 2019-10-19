@@ -1,0 +1,86 @@
+﻿@*@model ChoixResto.Models.Resto*@
+@model ChoixResto.ViewModels.AccueilViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        Je suis la vue index
+    </div>
+    <h2>Une première façon de faire avec ViewData</h2>
+    <ul>
+        <li>@ViewData["message"]</li>
+        <li>@(((DateTime)ViewData["date"]).ToString("dd/MM/yyyy"))</li>
+        <li>@(((ChoixResto.Models.Resto)ViewData["resto"]).Nom)</li>
+        <li>@(((ChoixResto.Models.Resto)ViewData["resto"]).Telephone)</li>
+    </ul>
+    <h2>Une deuxième façon de faire avec ViewData</h2>
+    <ul>
+        <li>@ViewData["message"]</li>
+        <li>@(((DateTime)ViewData["date"]).ToString("dd/MM/yyyy"))</li>
+        @{ 
+            ChoixResto.Models.Resto resto = (ChoixResto.Models.Resto)ViewData["resto"];
+        }
+        <li>@resto.Nom</li>
+        <li>@resto.Telephone</li>
+    </ul>
+    <h2>Une troisième façon de faire avec ViewBag (objet dynamic pointant sur ViewData)</h2>
+    <ul>
+        <li>@ViewBag.message</li>
+        <li>@ViewBag.date.ToString("dd/MM/yyyy")</li>
+        <li>@ViewBag.resto.Nom</li>
+        <li>@ViewBag.resto.Telephone</li>
+    </ul>
+    <h2>Quatrième façon de faire: en passant par l'objet Model qui est de type dynamic</h2>
+    <ul>
+        @*<li>@Model.Nom</li>
+        <li>@Model.Telephone</li>*@
+    </ul>
+    <h2>Cinquième façon de faire: avec une vue fortement typée</h2>
+    <ul>
+        <li>@ViewBag.message</li>
+        <li>@ViewBag.date.ToString("dd/MM/yyyy")</li>
+        @*<li>@Model.Nom</li>
+        <li>@Model.Telephone</li>*@
+    </ul>
+    <h2>Sixième façon de faire: avec une ViewModel</h2>
+    <ul>
+        <li>@Model.Messsage</li>
+        <li>@Model.Date.ToString("dd/MM/yyyy")</li>
+        @*<li>@Model.Resto.Nom</li>
+        <li>@Model.Resto.Telephone</li>*@
+    </ul>
+    <h2>Exemple d'une liste dans la ViewModel</h2>
+    <ul>
+        <li>@Model.Messsage</li>
+        <li>@Model.Date.ToString("dd/MM/yyyy")</li>
+        <li>
+            <table>
+                <tr><td>Nom</td><td>Téléphone</td></tr>
+            @{ 
+                foreach (var r in Model.Resto)
+                {
+                    <tr><td>@r.Nom</td><td>@r.Telephone</td></tr>
+                }
+            }
+             </table>
+        </li>
+    </ul>
+</body>
+</html>

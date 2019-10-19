@@ -19,10 +19,16 @@ namespace HelloWorld
             //    defaults: new { controller = "Meteo", action = "Afficher" },
             //    constraints: new { jour = @"\d+", mois = @"\d+", annee = @"\d+" });
 
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Accueil", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
