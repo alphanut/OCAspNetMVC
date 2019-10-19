@@ -82,5 +82,11 @@
              </table>
         </li>
     </ul>
+    <h2>Ma première vue partielle</h2>
+    @Html.Partial("Connexion", Model)
+    <h2>Vue partielle avec Html.Action</h2>
+    @Html.Action("AfficheListeRestaurant")
+    <h2>AVec et Sans Raw</h2>
+    @Html.Action("AfficherAvecHelperHtmlRaw")
 </body>
 </html>
